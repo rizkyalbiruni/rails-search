@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+<h1>Rails Search | ActiveRecord</h1>
+  <div class="row justify-content-center">
+  <div class="col-sm-8 my-3 mb-5">
+    <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+  <div class="row" id="movie-cards">
+        <%# <div class="card mb-2"> %>
+        <%# <div class="card-body"> %>
+
+        <% if @movies.any? %>
+          <% @movies.each do |movie| %>
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12" id="mymovies">
+          <div class="card mb-2">
+            <img src="<%=movie.poster_url%>" class="card-img-top" alt="">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2"><%= movie.year %></span>
+              <h5 class="card-title"><%= movie.title %></h5>
+            </div>
+          </div>
+          </div>
+            <% end %>
+        <% else %>
+          <em>Sorry, no movies found.</em>
+        <% end %>
+      </div>
+  </div>
+</div>
