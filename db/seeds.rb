@@ -390,6 +390,279 @@ movies_data.each do |movie_data|
 end
 
 def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=throne&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=the+a&page=2&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=the+a&page=3&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=the+a&page=4&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=the+a&page=5&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=the+a&page=6&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=and+a&page=1&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=and+a&page=2&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=and+a&page=3&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=and+a&page=4&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=and+a&page=5&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=and+a&page=6&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
+  uri = URI("https://www.omdbapi.com/?s=into&apikey=adf1f2d7")
+  response = Net::HTTP.get(uri)
+  JSON.parse(response)
+end
+
+# Seed database with movies
+movies_data = fetch_movies['Search']
+movies_data.each do |movie_data|
+  # Check if the movie doesn't exist in the database
+  unless Movie.exists?(imdb_id: movie_data['imdbID'])
+    # Create a new Movie object and save it to the database
+    Movie.create!(
+      title: movie_data['Title'],
+      year: movie_data['Year'],
+      imdb_id: movie_data['imdbID'],
+      poster_url: movie_data['Poster']
+    )
+  end
+end
+
+def fetch_movies
   uri = URI("https://www.omdbapi.com/?s=water&apikey=adf1f2d7")
   response = Net::HTTP.get(uri)
   JSON.parse(response)
