@@ -15,6 +15,11 @@
   </div>
 </div>
   <div class="row" id="movie-cards">
+  <% if @data['totalResults'].present?  %>
+    <p><%= "#{@data['totalResults']} results for '#{params[:query]}'" %></p>
+    <% else %>
+      <p>&nbsp;</p>
+    <% end %>
         <%# <div class="card mb-2"> %>
         <%# <div class="card-body"> %>
 
@@ -31,7 +36,7 @@
           </div>
           <% end %>
             <% if @data['totalResults'].to_i > 10 %>
-              <div class="col-6 d-flex justify-content-center align-items-center">
+              <div class="col-6 d-flex flex-column align-items-center justify-content-center">
                 <nav aria-label="Page navigation example">
                   <ul class="pagination">
                     <li class="page-item <% 'disabled' if @page.to_i <= 1 %>">
@@ -46,6 +51,10 @@
                     </li>
                   </ul>
                 </nav>
+                <%= link_to root_path, class: "text-dark mt-3 page-link text-center d-flex flex-column align-items-center justify-content-center" do %>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <p>New Search</p>
+                <% end %>
               </div>
               <% end %>
         <% elsif params[:query].present? && @data['Response'] == 'False' %>
