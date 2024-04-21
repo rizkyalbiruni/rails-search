@@ -1,8 +1,10 @@
 <div class="container">
-<h1>Rails Search | ActiveRecord</h1>
+<%= link_to root_path, class: "text-decoration-none text-dark" do %>
+    <h1>Rails Search | ActiveRecord</h1>
+  <% end %>
   <div class="row justify-content-center">
   <div class="col-sm-8 my-3 mb-5">
-    <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -19,15 +21,33 @@
         <% if @movies.any? %>
           <% @movies.each do |movie| %>
           <div class="col-lg-3 col-md-4 col-sm-6 col-12" id="mymovies">
-          <div class="card mb-2">
-            <img src="<%=movie['Poster']%>" class="card-img-top" alt="">
-            <div class="card-body">
-              <span class="badge bg-primary mb-2"><%= movie['Year'] %></span>
-              <h5 class="card-title"><%= movie['Title'] %></h5>
+            <div class="card mb-2">
+              <img src="<%=movie['Poster']%>" class="card-img-top" alt="">
+              <div class="card-body">
+                <span class="badge bg-primary mb-2"><%= movie['Year'] %></span>
+                <h5 class="card-title"><%= movie['Title'] %></h5>
+              </div>
             </div>
           </div>
-          </div>
-            <% end %>
+          <% end %>
+            <% if @data['totalResults'].to_i > 10 %>
+              <div class="col-6 d-flex justify-content-center align-items-center">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item <% 'disabled' if @page.to_i <= 1 %>">
+                      <%= link_to root_path(query: params[:query], page: @page.to_i - 1), class: "page-link text-center d-flex align-items-center justify-content-center" do %>
+                      <i class="fa-solid fa-circle-arrow-left icon-margin-left"></i>Previous
+                      <% end %>
+                    </li>
+                    <li class="page-item">
+                      <%= link_to root_path(query: params[:query], page: @page.to_i + 1), class: "page-link text-center d-flex align-items-center justify-content-center" do %>
+                      Next<i class="fa-solid fa-circle-arrow-right icon-margin-right"></i>
+                      <% end %>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <% end %>
         <% elsif params[:query].present? && @data['Response'] == 'False' %>
         <em>Sorry, no movies found.</em>
         <% else %>
@@ -35,4 +55,3 @@
         <% end %>
       </div>
   </div>
-</div>
