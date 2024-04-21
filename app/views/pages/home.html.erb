@@ -10,8 +10,8 @@
     <%= form_with url: root_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword e.g. 'Harry Potter'"
+            class: "form-control custom-placeholder",
+            placeholder: "Type a keyword e.g. 'Harry'"
         %>
       <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <% end %>
