@@ -1,7 +1,10 @@
 <div class="container">
-<%= link_to root_path, class: "text-decoration-none text-dark" do %>
-    <h1>Rails Search | ActiveRecord</h1>
+<div>
+  <%= link_to root_path, class: "text-decoration-none text-dark" do %>
+    <h1>My Movie Search 🎬</h1>
+    <p id="quote">Built with Rails-ActiveRecord-OMDb API by Rizky</p>
   <% end %>
+</div>
   <div class="row justify-content-center">
   <div class="col-sm-8 my-3 mb-5">
     <%= form_with url: root_path, method: :get, class: "d-flex" do %>
